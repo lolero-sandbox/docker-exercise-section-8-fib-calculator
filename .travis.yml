@@ -21,15 +21,14 @@ after_success:
   - docker push lolero/docker-excercise-section-8-fib-calculator-server
   - docker push lolero/docker-excercise-section-8-fib-calculator-worker
 
-#deploy:
-#  provider: elasticbeanstalk
-#  region: "us-east-2"
-#  app: "docker-excercise-section-8-fib-calculator"
-#  env: "DockerExcerciseSection8FibCalculator-env"
-#  bucket_name: "elasticbeanstalk-us-east-2-801047117175"
-#  bucket_path: "docker-excercise-section-8-fib-calculator"
-#  on:
-#    branch: master
-#  access_key_id: "$AWS_ACCESS_KEY"
-#  secret_access_key:
-#    secure: "$AWS_SECRET_KEY"
+deploy:
+  provider: elasticbeanstalk
+  region: "us-east-2"
+  app: "docker-excercise-section-8-fib-calculator"
+  env: "DockerExcerciseSection8FibCalculator-env"
+  bucket_name: "elasticbeanstalk-us-east-2-801047117175"
+  bucket_path: "docker-excercise-section-8-fib-calculator"
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
